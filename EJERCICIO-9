@@ -1,0 +1,35 @@
+CREATE TABLE titanic(
+	PassengerId INTEGER,
+    Survived INTEGER,
+    Pclass INTEGER,
+    Name TEXT,
+    Sex TEXT,
+    Age NUMERIC,
+    SibSp INTEGER,
+    Parch INTEGER,
+    Ticket TEXT,
+    Fare NUMERIC,
+    Cabin TEXT,
+    Embarked TEXT
+)
+
+SELECT *
+FROM titanic
+WHERE sex = 'female' AND survived = 1 AND age > 30;
+
+SELECT AVG(age) AS average_age
+FROM titanic
+WHERE sex = 'male' AND survived = 0;
+
+SELECT *
+FROM titanic
+WHERE fare BETWEEN 20 AND 50 AND embarked = 'C';
+
+SELECT COUNT(*) AS total_survivors
+FROM titanic
+WHERE pclass = 1 AND survived = 1;
+
+SELECT *
+FROM titanic
+WHERE embarked = 'C' AND fare > 75;
+
